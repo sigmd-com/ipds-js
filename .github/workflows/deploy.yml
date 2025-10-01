@@ -53,21 +53,17 @@ jobs:
     
     - name: Create GitHub Release
       if: success()
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: v$(node -p "require('./package.json').version")
-        release_name: Release v$(node -p "require('./package.json').version")
-        body: |
-          ## Changes in v$(node -p "require('./package.json').version")
+      run: |
+        gh release create "v$(node -p "require('./package.json').version")" \
+          --title "Release v$(node -p "require('./package.json').version")" \
+          --notes "## Changes in v$(node -p "require('./package.json').version")
           
           - Automated release from package.json update
           - Package built and published to NPM
           
           ### Installation
-          ```bash
+          \`\`\`bash
           npm install ipds
-          ```
-        draft: false
-        prerelease: false
+          \`\`\`"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

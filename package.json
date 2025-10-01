@@ -1,8 +1,11 @@
 {
   "name": "ipds",
-  "version": "0.0.1-dev",
+  "version": "0.0.1",
   "description": "IP Data Service - Comprehensive IP information lookup tool",
   "homepage": "https://github.com/sigmd-com/ipds-js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sigmd-com/ipds-js.git"

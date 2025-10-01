@@ -1,6 +1,6 @@
 {
   "name": "ipds",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "IP Data Service - Comprehensive IP information lookup tool",
   "homepage": "https://github.com/sigmd-com/ipds-js",
   "publishConfig": {
